@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Our Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 1px;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .menu-category {
+            margin-bottom: 40px;
+        }
+
+        .menu-category h2 {
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            padding: 15px;
+        }
+
+        .menu-item-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+
+        .menu-item-content p {
+            margin: 0 0 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .menu-item-content .price {
+            font-weight: bold;
+            color: #ff6347;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore Our Menu</h1>
+        <h5>Delicious dishes crafted just for you.</h5>
+    </header>
+
+    <div class="container">
+        <!-- Appetizers Section -->
+        <div class="menu-category">
+            <h2>Starters</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="french fries.jpg" alt="french fries">
+                    <div class="menu-item-content">
+                        <h3>French Fries</h3>
+                        <p>crispy, and lightly salted.</p>
+                        <p class="price">50Rs</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="chilli mushrrom.jpg" alt="chilli Mushrooms">
+                    <div class="menu-item-content">
+                        <h3>Chilli Mushroom</h3>
+                        <p>Button mushrooms filled with savory stuffing.</p>
+                        <p class="price">60Rs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Courses Section -->
+        <div class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="pizza.jpg" alt="pizza">
+                    <div class="menu-item-content">
+                        <h3>Pizza</h3>
+                        <p>Topped with tomato sauce, cheese, and a variety of toppings.</p>
+                        <p class="price">Rs89</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="pasta.jpg" alt="Pasta Primavera">
+                    <div class="menu-item-content">
+                        <h3>Pasta</h3>
+                        <p>Classic pasta with fresh seasonal vegetables.</p>
+                        <p class="price">Rs90</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="menu-category">
+            <h2>Desserts</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="chees.jpg" alt="Cheesecake">
+                    <div class="menu-item-content">
+                        <h3>Cheesecae</h3>
+                        <p>Rich and creamy cheesecake with a graham cracker crust.</p>
+                        <p class="price">40Rs</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="cake.jpg" alt="Chocolate Lava Cake">
+                    <div class="menu-item-content">
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Decadent chocolate cake with a gooey center.</p>
+                        <p class="price">70Rs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Foodie's Heaven. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

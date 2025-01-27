@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie's Heaven - Order Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8f0;
+        }
+        header {
+            background-color: #ff4500;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2em auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 2em;
+        }
+        .container h2 {
+            text-align: center;
+            color: #ff4500;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .menu-item span {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .menu-item button {
+            padding: 0.5em 1em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .menu-item button:hover {
+            background-color: #218838;
+        }
+        .order-summary {
+            margin-top: 2em;
+        }
+        .order-summary h3 {
+            color: #ff4500;
+            margin-bottom: 1em;
+        }
+        .order-summary ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .order-summary li {
+            margin: 0.5em 0;
+        }
+        .order-summary .total {
+            font-weight: bold;
+            margin-top: 1em;
+        }
+        .btn-checkout {
+            display: block;
+            margin: 1em auto;
+            padding: 0.8em 2em;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-checkout:hover {
+            background-color: #e53e30;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Order Your Favorite Dishes
+    </header>
+
+    <div class="container">
+        <h2>Menu</h2>
+        <div class="menu-item">
+            <span>Pizza</span>
+            <button onclick="addToOrder('Pizza', 89)">Add to Order - 89Rs</button>
+        </div>
+        <div class="menu-item">
+            <span>Chocolate Lava Cake</span>
+            <button onclick="addToOrder('Burger', 70)">Add to Order - 70Rs</button>
+        </div>
+        <div class="menu-item">
+            <span>Chilli Mushroom</span>
+            <button onclick="addToOrder('Sushi', 60)">Add to Order - 60Rs</button>
+        </div>
+        <div class="menu-item">
+            <span>Pasta</span>
+            <button onclick="addToOrder('Pasta', 90)">Add to Order - 90Rs</button>
+        </div>
+        <div class="menu-item">
+            <span>French Fries</span>
+            <button onclick="addToOrder('Salad', 50)">Add to Order - 50Rs</button>
+        </div>
+
+        <div class="order-summary">
+            <h3>Your Order</h3>
+            <ul id="order-list">
+                <!-- Order items will be dynamically added here -->
+            </ul>
+            <p class="total" id="order-total">Total: 0.00 Rs</p>
+            <a href="thankingpage.html" class="btn-checkout">Checkout</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Foodie's Heaven. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let order = [];
+
+        function addToOrder(itemName, itemPrice) {
+            order.push({ name: itemName, price: itemPrice });
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const orderList = document.getElementById('order-list');
+            const orderTotal = document.getElementById('order-total');
+
+            orderList.innerHTML = '';
+            let total = 0;
+
+            order.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ${item.price.toFixed(2)}Rs`;
+                orderList.appendChild(li);
+                total += item.price;
+            });
+
+            orderTotal.textContent = `Total: ${total.toFixed(2)}Rs`;
+        }
+    </script>
+</body>
+</html>
